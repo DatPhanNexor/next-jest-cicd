@@ -8,9 +8,20 @@ export async function generateMetadata({ params }: Params) {
   return { title: `Post: ${params.slug}` };
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: "test" },
+    { slug: "hello" },
+    { slug: "welcome" },
+  ];
+}
+
 export default function Page({ params }: Params) {
-  return <><h1>Slug: {params.slug}</h1>
-  <p>Hole Tex</p>
-  <p>Welcome to HCM</p>
-  </>;
+  return (
+    <>
+      <h1>Slug: {params.slug}</h1>
+      <p>Hole Tex</p>
+      <p>Welcome to HCM</p>
+    </>
+  );
 }
